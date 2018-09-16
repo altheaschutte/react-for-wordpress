@@ -3,12 +3,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
 module.exports = {
-  entry: {
-    main: './src/App.tsx'
-  },
+  mode: 'development',
+  entry: './src/App.tsx',
   output: {
-    path: path.join(__dirname, '../dist/'),
-    filename: '[name].bundle.js',
+    path: path.join(__dirname, 'dist'),
+    filename: 'bundle.js',
   },
   watch: true,
   resolve: {
@@ -38,9 +37,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: 'index.html',
-      showErrors: true,
       title: 'React-TS-Webpack App',
-      path: path.join(__dirname, '../dist/'),
+      path: path.join(__dirname, 'dist'),
       hash: true
     })
   ]
